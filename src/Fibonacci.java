@@ -1,40 +1,47 @@
 
-public class Fibonacci implements Runnable{
-       int FN;
-       int SN;
-       int TN;
-       boolean recursiveMode;
+public class Fibonacci implements Runnable {
+    int FN;
+    int SN;
+    int TN;
+    boolean recursiveMode;
 
 
     Fibonacci(int NumberOne, int NumberTwo, int NumberThree, boolean mode) {
         FN = NumberOne;
         SN = NumberTwo;
         TN = NumberThree;
-        mode = recursiveMode;
+        recursiveMode = mode;
     }
 
-    private void RecursiveMode(int i){
-        if (i > 0){
-           RecursiveMode(i - 1);
-        }
-    }
-    public void InterativeMode(){
+
+    public void InterativeMode() {
         System.out.println(FN);
         System.out.println(SN);
         for (int i = TN - 2; i > 0; i--) {
             System.out.println(FN + SN);
             FN = FN + SN;
+            TN = TN - 1;
         }
     }
 
-        public void run() {
-           if (recursiveMode = true){
-               RecursiveMode();
-           }
-
+    public void RecursiveMode(int first, int second, int count) {
+        if (count > 0) {
+            System.out.println(first);
+            RecursiveMode(second, first + second, count -1);
         }
-
-    private void RecursiveMode() {
     }
+
+    public void run() {
+        if(recursiveMode){
+            RecursiveMode(FN,SN,TN);
+        } else {
+            InterativeMode();
+        }
+    }
+
+
+
 
 }
+
+

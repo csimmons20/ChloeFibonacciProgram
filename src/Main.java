@@ -4,7 +4,7 @@ public class Main {
 
         for(int i = 0; i < 1; i++) {
             Runnable myFibonacci = new Fibonacci(2,5,4, true);
-            Runnable myFibonacci2 = new Fibonacci(1,2,4, true);
+            Runnable myFibonacci2 = new Fibonacci(1,2,5, false);
             Thread myThread = new Thread(myFibonacci);
             Thread myThread2 = new Thread(myFibonacci2);
             myThread.start();
