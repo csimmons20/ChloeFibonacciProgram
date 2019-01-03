@@ -14,7 +14,7 @@ public class Fibonacci implements Runnable {
     }
 
 
-    public void InterativeMode() {
+    public void IterativeMode() {
         System.out.println(FN);
         System.out.println(SN);
         for (int i = TN - 2; i > 0; i--) {
@@ -27,7 +27,7 @@ public class Fibonacci implements Runnable {
     public void RecursiveMode(int first, int second, int count) {
         if (count > 0) {
             System.out.println(first);
-            RecursiveMode(second, first + second, count -1);
+            RecursiveMode(second, first + second, count - 1);
         }
     }
 
@@ -35,7 +35,7 @@ public class Fibonacci implements Runnable {
         if(recursiveMode){
             RecursiveMode(FN,SN,TN);
         } else {
-            InterativeMode();
+            IterativeMode();
         }
     }
 
